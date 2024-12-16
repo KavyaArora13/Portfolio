@@ -1,3 +1,4 @@
+// src/containers/greeting/Greeting.js
 import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
@@ -41,11 +42,12 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./Kavya Resume.pdf")}
-                    download="KavyaResume.pdf"
+                    href={greeting.resumeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text="See my resume" />
                   </a>
                 )}
               </div>

@@ -1,84 +1,54 @@
-import React, {useState, createRef} from "react";
+import React from "react";
 import "./ExperienceCard.scss";
-import ColorThief from "colorthief";
+import { Fade } from "react-reveal";
 
-export default function ExperienceCard({cardInfo, isDark}) {
-  const [colorArrays, setColorArrays] = useState([]);
-  const imgRef = createRef();
-
-  function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
-  }
-
-  function rgb(values) {
-    return typeof values === "undefined"
-      ? null
-      : "rgb(" + values.join(", ") + ")";
-  }
-
-  const GetDescBullets = ({descBullets, isDark}) => {
-    return descBullets
-      ? descBullets.map((item, i) => (
-          <li
-            key={i}
-            className={isDark ? "subTitle dark-mode-text" : "subTitle"}
-          >
-            {item}
-          </li>
-        ))
-      : null;
-  };
+export default function ExperienceCard({ cardInfo, isDark }) {
+  // Combine the description with bullet points
+  const allPoints = [cardInfo.desc, ...(cardInfo.descBullets || [])];
 
   return (
-    <div className={isDark ? "experience-card-dark" : "experience-card"}>
-      <div style={{background: rgb(colorArrays)}} className="experience-banner">
-        <div className="experience-blurred_div"></div>
-        <div className="experience-div-company">
-          <h5 className="experience-text-company">{cardInfo.company}</h5>
+    <Fade bottom duration={1000} distance="20px">
+      <div className={isDark ? "experience-card-dark" : "experience-card"}>
+        <div className="experience-card-timeline">
+          <div className="timeline-dot"></div>
+          <div className="timeline-line"></div>
         </div>
+        
+        <div className="experience-card-content">
+          <div className="experience-card-header">
+            <div className="company-logo-wrapper">
+              <img
+                src={cardInfo.companylogo}
+                alt={cardInfo.company}
+                className="company-logo"
+              />
+            </div>
+            <div className="header-text">
+              <h3 className="company-name">
+                {cardInfo.company}
+              </h3>
+              <span className="role-badge">{cardInfo.role}</span>
+              <p className="date-text">{cardInfo.date}</p>
+            </div>
+          </div>
 
-        <img
-          crossOrigin={"anonymous"}
-          ref={imgRef}
-          className="experience-roundedimg"
-          src={cardInfo.companylogo}
-          alt={cardInfo.company}
-          onLoad={() => getColorArrays()}
-        />
+          <div className="experience-card-body">
+            <div className="highlights-section">
+              <h4 className="highlights-title">Key Achievements</h4>
+              <ul className="highlights-list">
+                {allPoints.map((point, i) => (
+                  <li
+                    key={i}
+                    className="highlight-item"
+                  >
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="experience-text-details">
-        <h5
-          className={
-            isDark
-              ? "experience-text-role dark-mode-text"
-              : "experience-text-role"
-          }
-        >
-          {cardInfo.role}
-        </h5>
-        <h5
-          className={
-            isDark
-              ? "experience-text-date dark-mode-text"
-              : "experience-text-date"
-          }
-        >
-          {cardInfo.date}
-        </h5>
-        <p
-          className={
-            isDark
-              ? "subTitle experience-text-desc dark-mode-text"
-              : "subTitle experience-text-desc"
-          }
-        >
-          {cardInfo.desc}
-        </p>
-        <ul>
-          <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
-        </ul>
-      </div>
-    </div>
+    </Fade>
   );
 }

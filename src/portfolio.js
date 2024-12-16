@@ -19,7 +19,7 @@ const greeting = {
     "A passionate Full Stack Developer with expertise in JavaScript, React.js, Node.js, and Express.js, experienced in building dynamic web applications, real-time data dashboards, and secure backend systems. Proficient in leveraging MongoDB, Firebase, and modern frameworks for efficient, scalable solutions."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1wbIZ2KtS08UlJsNWSD9EsmSuLCzsu97L/view?usp=sharing",
+    "https://drive.google.com/file/d/1wd7lTK8Q_NvF8B1R8Q-hHc59NTc9vl3i/view?usp=sharing",
   displayGreeting: true 
 };
 
@@ -27,10 +27,7 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/KavyaArora13",
-  linkedin: "https://www.linkedin.com/in/kavya-arora-92a989225/",
-  gmail: "kavyaarora1302@gmail.com",
-  Leetcode: "https://medium.com/@kavyaarora1302",
-  display: true
+  linkedin: "https://www.linkedin.com/in/kavya-arora-92a989225/"
 };
 
 const skillsSection = {
@@ -121,7 +118,7 @@ const educationInfo = {
       schoolName: "Children Sr Sec School",
       logo: require("./assets/images/children school.jpg"),
       subHeader: "Higher Secondary School Certificate (XII class)",
-      duration: "July 2019 - MAy 2021",
+      duration: "July 2019 - May 2021",
     }
   ]
 };
@@ -131,38 +128,49 @@ const workExperiences = {
   display: true,
   experience: [
     {
-      role: "Software Engineer",
-      company: "Leafy Island",
-      companylogo: require("./assets/images/LeafyIsland.jpg"),
-      date: "Oct 2023 – March 2024",
-      desc: "Created a real-time data dashboard utilizing React.js, HTML, CSS, and JavaScript for monitoring key per- formance indicators, contributing to enhanced data visualization and analysis capabilities.",
+      role: "Full Stack Developer",
+      company: "3rd Shade",
+      companylogo: require("./assets/images/3rdshadelogo.jpeg"),
+      date: "Sep 2024 – Present",
+      desc: "Developed several Full-Stack e-commerce websites using React.js, Redux Toolkit, and React Router DOM for navigation, implementing responsive design and integrating Framer Motion for smooth animations.",
       descBullets: [
-        "Designed user interfaces in Adobe XD and managed version control through Bitbucket.",
-        "Integrated JWT for secure API authentication and authorization, ensuring data security and user privacy in website interactions."
+        "Utilized Node.js and Express.js to create RESTful APIs for product management and user authentication, securing them with JWT",
+        "Optimized Frontend performance using Webpack, implemented server-side rendering for improved SEO, and set up CI/CD pipelines with GitLab for automated testing and deployment to AWS, while ensuring compatibility."
       ]
     },
     {
-      role: "Software Engineer",
-      company: "Help In Homework",
+      role: "Full Stack Developer",
+      company: "LeafyIsland",
+      companylogo: require("./assets/images/LeafyIsland.jpg"),
+      date: "Dec 2023 – May 2024",
+      desc: "Designed and developed a multiple page Work Portfolio for the client using Next.js, TypeScript, and HTML5/CSS3, styling it with Bootstrap and integrating GSAP for complex page transitions and project showcase animations.",
+      descBullets: [
+        "Implemented a GraphQL API with Node and MongoDB to manage and serve dynamic portfolio content, using Mongoose for data modeling and integrating with external APIs for enhanced functionality.",
+        "Optimized the portfolio application for performance and deployed it on Netlify, implementing a mobile-first design approach and effectively utilizing Git for seamless version control throughout the development process."
+      ]
+    },
+    {
+      role: "Full Stack Developer",
+      company: "HelpInHomework",
       companylogo: require("./assets/images/HelpInHomework.jpg"),
       date: "Jan 2023 – June 2023",
-      desc: "Leveraged Figma for prototyping and collaborative UI/UX design, ensuring consistent and interactive design ele- ments. Employed CSS3 and HTML5 for modern, standards-compliant web development.",
+      desc: "Designed and developed a high-converting landing page using React, Redux for state management, and Styled- components with Tailwind CSS, adhering to UI/UX best practices, responsive design, and clean code for a visually appealing and easily maintainable interface ensuring performance, scalability and overall performance.",
       descBullets: [
-        "Used AngularJS and TypeScript to develop scalable single-page applications, benefiting significantly from Type- Script’s static typing and Angular’s robust framework for efficient and maintainable code.",
-        "IUtilized version control systems, such as Git and Yarn, to manage and collaborate on code repositories, fostering an organized and efficient development process."
+        "Integrated the landing page with a Backend built on Node.js and Express.js, connecting to a NoSQL database to populate content and handle user submissions through RESTful API endpoints with robust error handling",
+        "Employed Agile methodologies and Scrum practices throughout the development process, utilizing Postman for thorough API testing and leveraging Vite for rapid development and optimized building, resulting in a performant and JavaScript (ES6+) compliant landing page."
       ]
     },
     {
       role: "Intern",
       company: "Macrogoogol",
       companylogo: require("./assets/images/Screenshot (3).png"),
-      date: "May 2022 –July 2022",
-      desc: "Developed a website using WordPress for content management and implemented comprehensive Search Engine Optimization (SEO), including keyword research, and on-page optimization to increase traffic.",
+      date: "March 2021 –March 2022",
+      desc: "Worked as a Programming Intern, focusing on Java, Data Structures and Algorithms, and Object-Oriented Programming (OOP) concepts, assisting in real-world applications and hands-on examples and solutions",
       descBullets: [
-        "Optimized website performance using Data structures and algorithms, Object-oriented programming prin- ciples, ensuring efficient data handling and smooth application operation.",
-        "Utilized React for building dynamic user interfaces, MongoDB for database management, Express.js and Node.js for server-side development."
+        "Contributed to enhancing team knowledge and proficiency in programming by providing guidance, conducting coding workshops, and participating in collaborative projects, fostering skills, collaboration, and teamwork.",
+        "Supported the delivery of solutions and explanations for theoretical subjects including Computer Networks, Database Management Systems (DBMS), and Operating Systems."
       ]
-    }
+    },
   ]
 };
 
@@ -175,44 +183,47 @@ const openSource = {
 
 
 
+// In portfolio.js - only showing the modified achievementSection, rest remains same
+
 const achievementSection = {
   title: emoji("Certifications 🏆 "),
-
-
   achievementsCards: [
     {
       title: "Microsoft Azure",
       subtitle:
-        "Completed Microsoft Azure AZ-104 certification modules, showcasing expertise in Azure administration, including managing identities, storage, compute resources, and virtual networks.",
+        "Completed Microsoft Azure AZ-104 certification modules, showcasing expertise in Azure administration, including managing identities, storage, compute resources, and virtual networks.",
       image: require("./assets/images/Azure.webp"),
-      imageAlt: "Certificate",
+      imageAlt: "Microsoft Azure Certificate",
       footerLink: [
         {
-          name: "Certification",
-        }
+          name: "View Certificate",
+          url: "https://drive.google.com/file/d/1fWBOA8l7y1YShBeRN7jjmGYOWFVfSvXq/view?usp=sharing" // Replace with your actual certificate link
+        },
       ]
     },
     {
-      title: "Oracel Java Programmer",
+      title: "Oracle Java Programmer",
       subtitle:
-        "Achieved Oracle Certified Associate, Java SE 8 Programmer certification, validating expertise in Java programming.",
+        "Achieved Oracle Certified Associate, Java SE 8 Programmer certification, validating expertise in Java programming.",
       image: require("./assets/images/Java.webp"),
-      imageAlt: "Certificate",
+      imageAlt: "Oracle Java Certificate",
       footerLink: [
         {
-          name: "Certification",
-          
-        }
+          name: "View Certificate",
+          url: "https://drive.google.com/file/d/1v3aSFaAttMY8E9rlQQ2m51XOinGRBFNB/view?usp=sharing" // Replace with your actual certificate link
+        },
       ]
     },
-
     {
       title: "IBM Full Stack Developer",
-      subtitle: "Earned IBM's Full Stack Software Developer certification through a verified Coursera course, demonstrating proficiency in full-stack development.",
+      subtitle: "Earned IBM's Full Stack Software Developer certification through a verified Coursera course, demonstrating proficiency in full-stack development.",
       image: require("./assets/images/Full Stack.webp"),
-      imageAlt: "Certificate",
+      imageAlt: "IBM Certificate",
       footerLink: [
-        {name: "Certification"}
+        {
+          name: "View Certificate",
+          url: "https://drive.google.com/file/d/1B2ZkzPqcy1kyCPhtzS0-Gq7Ic1NdVSR4/view?usp=sharing" // Replace with your actual certificate link
+        },
       ]
     }
   ],
@@ -220,22 +231,21 @@ const achievementSection = {
 };
 
 
-
 const resumeSection = {
   title: "Resume",
-  subtitle: "Feel free to download my resume",
-  resume: [
-    "https://drive.google.com/file/d/1wbIZ2KtS08UlJsNWSD9EsmSuLCzsu97L/view?usp=sharing"
-  ],
-  
-  display: true 
+  subtitle: "My Formal Bio Details",
+  resumeLink: {
+    view: "https://drive.google.com/file/d/1wd7lTK8Q_NvF8B1R8Q-hHc59NTc9vl3i/view?usp=sharing",
+    download: "https://drive.google.com/file/d/1wd7lTK8Q_NvF8B1R8Q-hHc59NTc9vl3i/view?usp=sharing"
+  },
+  display: true
 };
 
 const contactInfo = {
   title: emoji("Contact Me ☎"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-637510709",
+  number: "+91-6375310709",
   email_address: "kavyaarora13020@gmail.com"
 };
 

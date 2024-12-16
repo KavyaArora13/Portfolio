@@ -1,14 +1,18 @@
+// src/containers/achievement/Achievement.js
 import React, {useContext} from "react";
 import "./Achievement.scss";
 import AchievementCard from "../../components/achievementCard/AchievementCard";
 import {achievementSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+
 export default function Achievement() {
   const {isDark} = useContext(StyleContext);
+  
   if (!achievementSection.display) {
     return null;
   }
+  
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="achievements">
